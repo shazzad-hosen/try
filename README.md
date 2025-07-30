@@ -1,2 +1,2 @@
-# This is a simple try 
-Author: Jisan Ahmed
+# Demo of DOM
+Author: Shazzad Hosen
