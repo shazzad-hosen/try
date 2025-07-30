@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model</title>
+    <style>
+        .body {
+            background-color: #212121;
+            color: white;
+        }
+    </style>
+</head>
+<body class="body">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+    <script>
+        // selecting parent element and printing values
+        const parent = document.querySelector(".parent");
+        console.log(parent);
+
+        // childrens are HTML collections
+        console.log(parent.children);
+        console.log(parent.children[1].innerHTML);
+        console.log(parent.children[1]);
+
+        // adding property to children 1
+        parent.children[1].style.color = "orange";
+
+        for(let i = 0; i < parent.children.length; i++) {
+            console.log(parent.children[i].innerHTML);
+        }
+        console.log("after for loop");
+
+        console.log(parent.firstElementChild);
+        console.log(parent.lastElementChild);
+
+        console.log(parent.firstElementChild.innerHTML);
+        console.log(parent.lastElementChild.innerHTML);
+
+        console.log("after last element child");
+
+        const dayOne = document.querySelector(".day");
+        console.log(dayOne);
+
+        // jumping to parent from the fist child
+        console.log(dayOne.parentElement);
+
+        // jumping to next sibling from the fist child
+        console.log(dayOne.nextElementSibling);
+
+        // childNodes is a complex tree structure, it counts lines, tabs, spaces, text elements
+        console.log("NODES", parent.childNodes);
+        </script>
+</body>
+</html>

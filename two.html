@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model</title>
+</head>
+<body style="background-color: #212121; columns: #ffffff;"> 
+    
+</body>
+<script>
+    // creating a new dev element
+    const div = document.createElement("div");
+    console.log(div);
+
+    // adding properties to that div
+    div.className = "main";
+    div.id = "main-id";
+    div.setAttribute("title", "I am a title");
+    div.style.backgroundColor = "green";
+    div.style.color = "white";
+    div.style.padding = "12px";
+
+    // div.innerText = "Chai Aur Code";
+
+    // adding text message inside of our div
+    const addText = document.createTextNode("Hello, I am a newborn div");
+    div.appendChild(addText);
+
+    // attach the created element to document
+    document.body.appendChild(div);
+
+    // creating a new h1 element
+    const h1 = document.createElement("h1");
+
+    h1.className = "heading";
+    h1.style.backgroundColor = "green";
+    h1.style.color = "white";
+
+    // adding a text message
+    const message = document.createTextNode("Hi, I am a heading");
+    h1.appendChild(message);
+
+    // adding and displaying created element to the web page 
+    document.body.appendChild(h1);
+
+
+</script>
+</html>

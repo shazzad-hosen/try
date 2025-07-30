@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model</title>
+</head>
+<body style="background-color: #212121; color: white;">
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(languageName) {
+        const list = document.createElement("li");
+        list.innerHTML = languageName;
+        document.querySelector(".language").appendChild(list);
+    }
+    addLanguage("Python");
+    addLanguage("C++");
+    addLanguage("Java");
+
+    // this approach is a littlebit optimised
+    function addOptiLanguage(addLanguage) {
+        const list = document.createElement("li");
+        list.appendChild(document.createTextNode(addLanguage));
+
+        document.querySelector(".language").appendChild(list);
+    }
+    addOptiLanguage("Rust");
+    addOptiLanguage("Golang");
+    addOptiLanguage("Ruby");
+
+
+    // editing added elements, accessing second childNode
+    const secondLanguage = document.querySelector("li:nth-child(2)");
+
+    // creating new textNode(best approach)
+    const editText = document.createTextNode("Mojo");
+
+    // replacing old value with new value
+    secondLanguage.replaceWith(editText);
+
+    // replacing another element
+
+    const firstElement = document.querySelector("li:first-child");
+    const newElement = document.createTextNode("TypeScript");
+    
+    // another method for editing text
+    firstElement.replaceChildren(newElement);
+
+    // another method for editing text
+    firstElement.outerHTML = "<li> JS </li>";
+
+    // removing last elements
+    const lastLanguage = document.querySelector("li:last-child");
+    lastLanguage.remove();
+</script>
+</html>
